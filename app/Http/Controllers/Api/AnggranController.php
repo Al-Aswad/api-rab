@@ -6,6 +6,9 @@ use App\Anggaran;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Exports\AnggaranExport;
+// use App\Exports\SiswaExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AnggranController extends Controller
 {
@@ -48,6 +51,6 @@ class AnggranController extends Controller
 
     public function download_excel()
     {
-        echo "tes";
+        return Excel::download(new AnggaranExport, 'Anggaran.xlsx');
     }
 }
