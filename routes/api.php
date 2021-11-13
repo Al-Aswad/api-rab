@@ -37,4 +37,4 @@ Route::delete('/kegiatan/{id}', [KegiatanController::class, 'delete']);
 Route::get('/anggaran', [AnggranController::class, 'index']);
 Route::post('/anggaran', [AnggranController::class, 'store']);
 Route::delete('/anggaran/{id}', [AnggranController::class, 'delete']);
-Route::get('/anggaran-excel', [AnggranController::class, 'download_excel']);
+Route::get('/anggaran-excel', [AnggranController::class, 'anggaran_excel']);

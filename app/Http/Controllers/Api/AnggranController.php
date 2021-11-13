@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Exports\AnggaranExport;
+use App\Exports\AnggaranExcel;
 // use App\Exports\SiswaExport;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -49,8 +50,10 @@ class AnggranController extends Controller
             return ResponseFormatter::error($anggaran, 'Gagal Menghapus Anggaran', 404);
     }
 
-    public function download_excel()
+    public function anggaran_excel()
     {
-        return Excel::download(new AnggaranExport, 'Anggaran.xlsx');
+        // return Excel::download(new AnggaranExport, 'Anggaran.xlsx');
+        // return Excel::download(new AnggaranExportVie, 'Anggaran.xlsx');
+        return Excel::download(new AnggaranExcel, 'invoices.xlsx');
     }
 }
