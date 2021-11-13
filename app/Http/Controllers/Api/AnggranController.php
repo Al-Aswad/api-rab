@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Exports\AnggaranExport;
 use App\Exports\AnggaranExcel;
+use Illuminate\Support\Facades\Date;
 // use App\Exports\SiswaExport;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -54,6 +55,6 @@ class AnggranController extends Controller
     {
         // return Excel::download(new AnggaranExport, 'Anggaran.xlsx');
         // return Excel::download(new AnggaranExportVie, 'Anggaran.xlsx');
-        return Excel::download(new AnggaranExcel, 'invoices.xlsx');
+        return Excel::download(new AnggaranExcel, 'RAB.xlsx');
     }
 }
